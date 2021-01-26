@@ -16,8 +16,8 @@ import openclass
 #     #driver.close()
 
 if __name__=="__main__":
-    #url = f'https://api.telegram.org/bot1532806948:AAHrR1O49Ow4J06-nVBqNo9I8XtFHmHLXGI/sendMessage?chat_id=-562221071&document=file.txt'
-    #requests.get(url)
+    url = f'https://api.telegram.org/bot1532806948:AAHrR1O49Ow4J06-nVBqNo9I8XtFHmHLXGI/sendMessage?chat_id=-562221071&document=file.txt'
+
     opt = Options()
     opt.add_argument("--disable-infobars")
     opt.add_argument("start-maximized")
@@ -28,7 +28,7 @@ if __name__=="__main__":
         "profile.default_content_setting_values.geolocation": 1,
         "profile.default_content_setting_values.notifications": 1
     })
-    driver = webdriver.Chrome(options=opt,executable_path=r'/Users/acephoenix02/Google Drive/Documents/Python/Online-Class-Automation/chromedriver')
+    driver = webdriver.Chrome(options=opt,executable_path=r'/chromedriver')
     #driver = webdriver.Chrome()
     driver.get("https://google.com")
     driver.find_element_by_xpath('//*[@id="gb_70"]').click()
@@ -58,7 +58,7 @@ if __name__=="__main__":
     ## TUESDAY
     schedule.every().tuesday.at("16:55").do(openclass.automate, driver,
                                             "https://meet.google.com/lookup/ceg7iq3out")
-    schedule.every().tuesday.at("19:08").do(openclass.automate, driver,
+    schedule.every().tuesday.at("20:12").do(openclass.automate, driver,
                                             "https://meet.google.com/lookup/e6obb4y2fu")
     schedule.every().tuesday.at("11:00").do(openclass.automate, driver,
                                             "LINK:-https://meet.google.com/lookup/fw3ddngntg  (Batch-1)Advance Programming Practice(By- Rajiva Ranjan)")
