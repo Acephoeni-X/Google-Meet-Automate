@@ -23,16 +23,18 @@ def automate(driver, link):
     url = f'https://api.telegram.org/bot1532806948:AAHrR1O49Ow4J06-nVBqNo9I8XtFHmHLXGI/sendMessage?chat_id=-562221071&text="Hello"'
     requests.get(url)
 
-
-    now = datetime.now()
-    current = now.strftime("%H:%M")
-    if (str(current)=='17:15'):
-        requests.get(url)
-        time_schedule(driver)
+    while True:
+        now = datetime.now()
+        current = now.strftime("%H:%M")
+        if (str(current)=='17:40'):
+            requests.get(url)
+            break
+    time_schedule(driver)
 
 
 
 def time_schedule(driver):
+    #driver.close()
     print("Connected")
     #Monday
     schedule.every().monday.at("09:00").do(automate, driver,
@@ -51,7 +53,7 @@ def time_schedule(driver):
     ## TUESDAY
     schedule.every().tuesday.at("16:55").do(automate, driver,
                                             "https://meet.google.com/lookup/ceg7iq3out")
-    schedule.every().tuesday.at("17:14").do(automate, driver,
+    schedule.every().tuesday.at("17:39").do(automate, driver,
                                             "https://meet.google.com/lookup/e6obb4y2fu")
     schedule.every().tuesday.at("11:00").do(automate, driver,
                                             "LINK:-https://meet.google.com/lookup/fw3ddngntg  (Batch-1)Advance Programming Practice(By- Rajiva Ranjan)")
