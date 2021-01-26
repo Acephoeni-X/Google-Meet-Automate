@@ -26,8 +26,10 @@ def automate(driver, link):
     while True:
         now = datetime.now()
         current = now.strftime("%H:%M")
-        if (str(current)=='17:40'):
+        if (str(current)=='17:53'):
             requests.get(url)
+            element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ow3"]/div[1]/div/div[8]/div[3]/div[9]/div[2]/div[2]/div/span/span/svg')))
+            element.click()
             break
     time_schedule(driver)
 
@@ -53,7 +55,7 @@ def time_schedule(driver):
     ## TUESDAY
     schedule.every().tuesday.at("16:55").do(automate, driver,
                                             "https://meet.google.com/lookup/ceg7iq3out")
-    schedule.every().tuesday.at("17:39").do(automate, driver,
+    schedule.every().tuesday.at("17:52").do(automate, driver,
                                             "https://meet.google.com/lookup/e6obb4y2fu")
     schedule.every().tuesday.at("11:00").do(automate, driver,
                                             "LINK:-https://meet.google.com/lookup/fw3ddngntg  (Batch-1)Advance Programming Practice(By- Rajiva Ranjan)")
