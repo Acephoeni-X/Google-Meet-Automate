@@ -14,32 +14,7 @@ import openclass
 
 # def time_schedule(driver):
 #     #driver.close()
-
-if __name__=="__main__":
-    #url = f'https://api.telegram.org/bot1532806948:AAHrR1O49Ow4J06-nVBqNo9I8XtFHmHLXGI/sendMessage?chat_id=-562221071&document=file.txt'
-    #requests.get(url)
-    opt = Options()
-    opt.add_argument("--disable-infobars")
-    opt.add_argument("start-maximized")
-    opt.add_argument("--disable-extensions")
-    opt.add_experimental_option("prefs", { \
-        "profile.default_content_setting_values.media_stream_mic": 2,
-        "profile.default_content_setting_values.media_stream_camera": 2,
-        "profile.default_content_setting_values.geolocation": 1,
-        "profile.default_content_setting_values.notifications": 1
-    })
-    driver = webdriver.Chrome(options=opt,executable_path=r'/Users/acephoenix02/Google Drive/Documents/Python/Online-Class-Automation/chromedriver')
-    #driver = webdriver.Chrome()
-    driver.get("https://google.com")
-    driver.find_element_by_xpath('//*[@id="gb_70"]').click()
-    driver.find_element_by_xpath('//*[@id="identifierId"]').send_keys('rs1965@srmist.edu.in')
-    driver.find_element_by_xpath('//*[@id="identifierNext"]/div/button/div[2]').click()
-    #river.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input').send_keys('Firefist@ace2002')
-    wait = WebDriverWait(driver, 20)
-    # wait.until(driver.get(link))
-    element = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="password"]/div[1]/div/div[1]/input')))
-    element.send_keys('Firefist@ace2002')
-    driver.find_element_by_xpath('//*[@id="passwordNext"]/div/button/div[2]').click()
+def trying(driver):
     print("Connected")
     #Monday
     schedule.every().monday.at("09:00").do(openclass.automate, driver,
@@ -58,10 +33,10 @@ if __name__=="__main__":
     ## TUESDAY
     schedule.every().tuesday.at("16:55").do(openclass.automate, driver,
                                             "https://meet.google.com/lookup/ceg7iq3out")
-    schedule.every().tuesday.at("19:08").do(openclass.automate, driver,
+    schedule.every().tuesday.at("23:00").do(openclass.automate, driver,
                                             "https://meet.google.com/lookup/e6obb4y2fu")
-    schedule.every().tuesday.at("11:00").do(openclass.automate, driver,
-                                            "LINK:-https://meet.google.com/lookup/fw3ddngntg  (Batch-1)Advance Programming Practice(By- Rajiva Ranjan)")
+    schedule.every().tuesday.at("23:02").do(openclass.automate, driver,
+                                            "LINK:-https://meet.google.com/lookup/fw3ddngntg")
     schedule.every().tuesday.at("11:00").do(openclass.automate, driver,
                                             "LINK:-https://meet.google.com/lookup/gkmtyn7lwr  (Batch-2)Advance Programming Practice(By- Anurag Singh)")
     schedule.every().tuesday.at("12:00").do(openclass.automate, driver,
@@ -128,6 +103,35 @@ if __name__=="__main__":
     while True:
       schedule.run_pending()
       time.sleep(10)
+
+
+if __name__=="__main__":
+    #url = f'https://api.telegram.org/bot1532806948:AAHrR1O49Ow4J06-nVBqNo9I8XtFHmHLXGI/sendMessage?chat_id=-562221071&document=file.txt'
+    #requests.get(url)
+    opt = Options()
+    opt.add_argument("--disable-infobars")
+    opt.add_argument("start-maximized")
+    opt.add_argument("--disable-extensions")
+    opt.add_experimental_option("prefs", { \
+        "profile.default_content_setting_values.media_stream_mic": 2,
+        "profile.default_content_setting_values.media_stream_camera": 2,
+        "profile.default_content_setting_values.geolocation": 1,
+        "profile.default_content_setting_values.notifications": 1,
+        "detach": True
+    })
+    driver = webdriver.Chrome(options=opt,executable_path=r'/Users/acephoenix02/Google Drive/Documents/Python/Online-Class-Automation/chromedriver')
+    #driver = webdriver.Chrome()
+    driver.get("https://google.com")
+    driver.find_element_by_xpath('//*[@id="gb_70"]').click()
+    driver.find_element_by_xpath('//*[@id="identifierId"]').send_keys('rs1965@srmist.edu.in')
+    driver.find_element_by_xpath('//*[@id="identifierNext"]/div/button/div[2]').click()
+    #river.find_element_by_xpath('//*[@id="password"]/div[1]/div/div[1]/input').send_keys('Firefist@ace2002')
+    wait = WebDriverWait(driver, 20)
+    # wait.until(driver.get(link))
+    element = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="password"]/div[1]/div/div[1]/input')))
+    element.send_keys('Firefist@ace2002')
+    driver.find_element_by_xpath('//*[@id="passwordNext"]/div/button/div[2]').click()
+    trying(driver)
 
 
     # time_schedule(driver)
