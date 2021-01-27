@@ -77,6 +77,16 @@ def start(link):
     # wait = WebDriverWait(driver, 20)
     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div/div[1]/div[1]/span/span')))
     element.click()
+    while True:
+        text, chat = get_last_chat_id_and_text(get_updates())
+        if(text == "/1stop @Jarvismy_bot"):
+            exitprogram(driver)
+
+def exitprogram(driver):
+    wait = WebDriverWait(driver, 20)
+    element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ow3"]/div[1]/div/div[8]/div[3]/div[9]/div[2]/div[2]/div')))
+    element.click()
+    main(text, chat)
 
 def main(text, chat):
     while True:
