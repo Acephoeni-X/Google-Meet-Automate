@@ -72,8 +72,8 @@ def start(link, chat):
     time.sleep(5)
     driver.get(link)
     wait = WebDriverWait(driver, 20)
-    element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="yDmH0d"]/div[3]/div/div[2]/div[3]/div/span/span')))
-    element.click()
+    # element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="yDmH0d"]/div[3]/div/div[2]/div[3]/div/span/span')))
+    # element.click()
     # wait = WebDriverWait(driver, 20)
     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div/div/div')))
     element.click()
@@ -84,8 +84,20 @@ def start(link, chat):
     send_message("class 1 started", chat)
     while True:
         text, chat = get_last_chat_id_and_text(get_updates())
-        if(text == "/1stop @Jarvismy_bot"):
+        if(text == "/1stop"):
             exitprogram(driver)
+        # if(text == "/message"):
+        #     attendence(driver)
+
+# def attendence(driver):
+#     wait = WebDriverWait(driver, 20)
+#     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ow3"]/div[1]/div/div[8]/div[3]/div[6]/div[3]/div/div[2]/div[3]/span')))
+#     element.click()
+#     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ow3"]/div[1]/div/div[8]/div[3]/div[3]/div/div[2]/div[2]/div[2]/span[2]/div/div[4]/div[1]/div[1]/div[2]/textarea')))
+#     element.send_keys("293P network issue")
+#     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ow3"]/div[1]/div/div[8]/div[3]/div[3]/div/div[2]/div[2]/div[2]/span[2]/div/div[4]/div[2]/span/span/span/svg')))
+#     # element.click()
+#     element.sendKeys(Keys.RETURN)
 
 def exitprogram(driver):
     wait = WebDriverWait(driver, 20)
@@ -97,10 +109,18 @@ def exitprogram(driver):
 def main(text, chat):
     while True:
         text, chat = get_last_chat_id_and_text(get_updates())
-        if(text == "/1 @Jarvismy_bot"):
-            start("https://meet.google.com/bss-kfzy-jsx", chat)
-        if(text =="/help"):
-            send_message("text is dusre me se dekh le", chat)
+        if(text == "/1"):
+            start("https://meet.google.com/lookup/ctv6kwrdcp", chat)
+        if(text =="/2"):
+            start("https://meet.google.com/lookup/ceg7iq3out", chat)
+        if(text == "/3"):
+            start("https://meet.google.com/lookup/gkmtyn7lwr", chat)
+        if(text =="/4"):
+            start("https://meet.google.com/lookup/cdcyj7x2n7", chat)
+        if(text == "/5"):
+            start("https://meet.google.com/lookup/do7n5mv6ld", chat)
+        # if(text =="/6"):
+        #     start("https://meet.google.com/lookup/gkmtyn7lwr", chat)
 
 
 
