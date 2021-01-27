@@ -32,11 +32,11 @@ def trying(driver):
 
     ## TUESDAY
     schedule.every().tuesday.at("16:55").do(openclass.automate, driver,
-                                            "https://meet.google.com/lookup/ceg7iq3out")
+                                            "https://meet.google.com/lookup/ceg7iq3out")#
     schedule.every().tuesday.at("23:00").do(openclass.automate, driver,
-                                            "https://meet.google.com/lookup/e6obb4y2fu")
+                                            "https://meet.google.com/lookup/e6obb4y2fu")#
     schedule.every().tuesday.at("23:02").do(openclass.automate, driver,
-                                            "LINK:-https://meet.google.com/lookup/fw3ddngntg")
+                                            "LINK:-https://meet.google.com/lookup/fw3ddngntg")#
     schedule.every().tuesday.at("11:00").do(openclass.automate, driver,
                                             "LINK:-https://meet.google.com/lookup/gkmtyn7lwr  (Batch-2)Advance Programming Practice(By- Anurag Singh)")
     schedule.every().tuesday.at("12:00").do(openclass.automate, driver,
@@ -51,8 +51,8 @@ def trying(driver):
     ## WEDNESDAY
     schedule.every().wednesday.at("09:00").do(openclass.automate, driver,
                                               "LINK:-https://meet.google.com/lookup/ctv6kwrdcp  Operating Systems(By- Saurabh Gupta)")
-    schedule.every().wednesday.at("10:00").do(openclass.automate, driver,
-                                              "LINK:-https://meet.google.com/lookup/ceg7iq3out  Probability and Queueing Theory(By- Tanuj Kumar)")
+    schedule.every().wednesday.at("10:30").do(openclass.automate, driver,
+                                              "https://meet.google.com/lookup/ceg7iq3out")
     schedule.every().wednesday.at("11:00").do(openclass.automate, driver,
                                               "LINK:-https://meet.google.com/lookup/gkmtyn7lwr  (Batch-2)Advance Programming Practice(By- Anurag Singh)")
     schedule.every().wednesday.at("11:00").do(openclass.automate, driver,

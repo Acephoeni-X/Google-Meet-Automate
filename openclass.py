@@ -8,12 +8,14 @@ from selenium.webdriver.chrome.options import Options
 import time
 import requests
 from datetime import datetime
+import test2
 
 def exitprogram(driver):
     wait = WebDriverWait(driver, 20)
     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ow3"]/div[1]/div/div[8]/div[3]/div[9]/div[2]/div[2]/div')))
     element.click()
-    driver.close()
+    test2.trying(driver)
+
 
 
 def automate(driver, link):
@@ -33,10 +35,11 @@ def automate(driver, link):
     while True:
         now = datetime.now()
         current = now.strftime("%H:%M")
-        if (str(current)=='23:01'):
+        if (str(current)=='10:31'):
             requests.get(url)
             # element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ow3"]/div[1]/div/div[8]/div[3]/div[9]/div[2]/div[2]/div/span/span/svg')))
             # element.click()
             # break
             exitprogram(driver)
+            break
 
