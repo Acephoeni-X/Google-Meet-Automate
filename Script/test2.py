@@ -3,11 +3,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import time
-import requests
-from datetime import datetime
 import openclass
 
 
@@ -119,7 +116,7 @@ if __name__=="__main__":
         "profile.default_content_setting_values.notifications": 1,
         "detach": True
     })
-    driver = webdriver.Chrome(options=opt,executable_path=r'/Users/acephoenix02/Google Drive/Documents/Python/Online-Class-Automation/chromedriver')
+    driver = webdriver.Chrome(options=opt, executable_path=r'/Script/chromedriver')
     #driver = webdriver.Chrome()
     driver.get("https://google.com")
     driver.find_element_by_xpath('//*[@id="gb_70"]').click()

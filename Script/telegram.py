@@ -59,7 +59,7 @@ def start(link, chat):
         "detach": True
     })
     driver = webdriver.Chrome(options=opt,
-                              executable_path=r'/Users/acephoenix02/Google Drive/Documents/Python/Online-Class-Automation/chromedriver')
+                              executable_path=r'/Script/chromedriver')
     # driver = webdriver.Chrome()
     driver.get("https://google.com")
     driver.find_element_by_xpath('//*[@id="gb_70"]').click()
