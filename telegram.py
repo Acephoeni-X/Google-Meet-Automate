@@ -46,14 +46,14 @@ def send_message(text, chat_id):
     url = URL + "sendMessage?text={}&chat_id={}".format(text, chat_id)
     get_url(url)
 
-def start(link):
+def start(link, chat):
     opt = Options()
     opt.add_argument("--disable-infobars")
     opt.add_argument("start-maximized")
     opt.add_argument("--disable-extensions")
     opt.add_experimental_option("prefs", { \
-        "profile.default_content_setting_values.media_stream_mic": 2,
-        "profile.default_content_setting_values.media_stream_camera": 2,
+        "profile.default_content_setting_values.media_stream_mic": 1,
+        "profile.default_content_setting_values.media_stream_camera": 1,
         "profile.default_content_setting_values.geolocation": 1,
         "profile.default_content_setting_values.notifications": 1,
         "detach": True
@@ -75,8 +75,13 @@ def start(link):
     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="yDmH0d"]/div[3]/div/div[2]/div[3]/div/span/span')))
     element.click()
     # wait = WebDriverWait(driver, 20)
+    element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div/div/div')))
+    element.click()
+    element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[3]/div[2]/div/div')))
+    element.click()
     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div/div[1]/div[1]/span/span')))
     element.click()
+    send_message("class 1 started", chat)
     while True:
         text, chat = get_last_chat_id_and_text(get_updates())
         if(text == "/1stop @Jarvismy_bot"):
@@ -86,13 +91,18 @@ def exitprogram(driver):
     wait = WebDriverWait(driver, 20)
     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ow3"]/div[1]/div/div[8]/div[3]/div[9]/div[2]/div[2]/div')))
     element.click()
+    send_message("class ended", text)
     main(text, chat)
 
 def main(text, chat):
     while True:
         text, chat = get_last_chat_id_and_text(get_updates())
         if(text == "/1 @Jarvismy_bot"):
-            start("https://meet.google.com/lookup/gkmtyn7lwr")
+            start("https://meet.google.com/bss-kfzy-jsx", chat)
+        if(text =="/help"):
+            send_message("text is dusre me se dekh le", chat)
+
+
 
 text, chat = get_last_chat_id_and_text(get_updates())
 main(text, chat)
