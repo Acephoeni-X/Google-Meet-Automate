@@ -110,15 +110,15 @@ def main(text, chat):
     while True:
         text, chat = get_last_chat_id_and_text(get_updates())
         if(text == "/1"):
-            start("https://meet.google.com/lookup/ctv6kwrdcp", chat)
+            start("https://meet.google.com/lookup/ef4rgsip3e", chat)
         if(text =="/2"):
             start("https://meet.google.com/lookup/ceg7iq3out", chat)
         if(text == "/3"):
-            start("https://meet.google.com/lookup/gkmtyn7lwr", chat)
+            start("https://meet.google.com/lookup/e6obb4y2fu", chat)
         if(text =="/4"):
-            start("https://meet.google.com/lookup/cdcyj7x2n7", chat)
+            start("https://meet.google.com/lookup/dxynmk724s", chat)
         if(text == "/5"):
-            start("https://meet.google.com/lookup/do7n5mv6ld", chat)
+            start("https://meet.google.com/lookup/dbmj5o6tsn", chat)
         # if(text =="/6"):
         #     start("https://meet.google.com/lookup/gkmtyn7lwr", chat)
 
