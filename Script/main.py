@@ -1,6 +1,6 @@
 import json
 import requests
-import schedule
+import   schedule
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -10,7 +10,6 @@ from selenium.webdriver.chrome.options import Options
 import time
 import requests
 from datetime import datetime
-import openclass
 
 TOKEN = "1532806948:AAHrR1O49Ow4J06-nVBqNo9I8XtFHmHLXGI"
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
@@ -37,6 +36,7 @@ def get_updates():
 def get_last_chat_id_and_text(updates):
     num_updates = len(updates["result"])
     last_update = num_updates - 1
+    print(last_update)
     text = updates["result"][last_update]["message"]["text"]
     chat_id = updates["result"][last_update]["message"]["chat"]["id"]
     return (text, chat_id)
@@ -69,9 +69,6 @@ def start(link, chat):
     element.send_keys('rs1965@srmist.edu.in')
     element = wait.until(EC.presence_of_element_located((By.XPATH,'//*[@id="identifierNext"]/div/button/div[2]')))
     element.click()
-    #driver.find_element_by_xpath('//*[@id="gb_70"]').click()
-    #driver.find_element_by_xpath('//*[@id="identifierId"]').send_keys('rs1965@srmist.edu.in')
-    #driver.find_element_by_xpath('//*[@id="identifierNext"]/div/button/div[2]').click()
     
     element = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="password"]/div[1]/div/div[1]/input')))
     element.send_keys('Firefist@ace2002')
@@ -79,9 +76,6 @@ def start(link, chat):
     time.sleep(5)
     driver.get(link)
     wait = WebDriverWait(driver, 20)
-    # element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="yDmH0d"]/div[3]/div/div[2]/div[3]/div/span/span')))
-    # element.click()
-    # wait = WebDriverWait(driver, 20)
     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div/div/div')))
     element.click()
     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="yDmH0d"]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[3]/div[2]/div/div')))
@@ -93,18 +87,7 @@ def start(link, chat):
         text, chat = get_last_chat_id_and_text(get_updates())
         if(text == "/1stop"):
             exitprogram(driver)
-        # if(text == "/message"):
-        #     attendence(driver)
 
-# def attendence(driver):
-#     wait = WebDriverWait(driver, 20)
-#     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ow3"]/div[1]/div/div[8]/div[3]/div[6]/div[3]/div/div[2]/div[3]/span')))
-#     element.click()
-#     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ow3"]/div[1]/div/div[8]/div[3]/div[3]/div/div[2]/div[2]/div[2]/span[2]/div/div[4]/div[1]/div[1]/div[2]/textarea')))
-#     element.send_keys("293P network issue")
-#     element = wait.until(EC.element_to_be_clickable((By.XPATH, '//*[@id="ow3"]/div[1]/div/div[8]/div[3]/div[3]/div/div[2]/div[2]/div[2]/span[2]/div/div[4]/div[2]/span/span/span/svg')))
-#     # element.click()
-#     element.sendKeys(Keys.RETURN)
 
 def exitprogram(driver):
     wait = WebDriverWait(driver, 20)
@@ -126,10 +109,11 @@ def main(text, chat):
             start("https://meet.google.com/lookup/dxynmk724s", chat)
         if(text == "/5"):
             start("https://meet.google.com/lookup/dbmj5o6tsn", chat)
-        # if(text =="/6"):
-        #     start("https://meet.google.com/lookup/gkmtyn7lwr", chat)
+        if(text =="/6"):
+            start("https://meet.google.com/lookup/gkmtyn7lwr", chat)
 
 
 
 text, chat = get_last_chat_id_and_text(get_updates())
-main(text, chat)
+
+
