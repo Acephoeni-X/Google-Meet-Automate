@@ -1,6 +1,6 @@
 import json
 import requests
-import   schedule
+import schedule
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
