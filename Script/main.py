@@ -1,6 +1,6 @@
 import json
 import requests
-import   schedule
+import schedule
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -66,12 +66,12 @@ def start(link, chat):
     element = wait.until(EC.presence_of_element_located((By.XPATH,'//*[@id="gb_70"]')))
     element.click()
     element = wait.until(EC.presence_of_element_located((By.XPATH,'//*[@id="identifierId"]')))
-    element.send_keys('rs1965@srmist.edu.in')
+    element.send_keys('<Add-Your-Email-ID>')
     element = wait.until(EC.presence_of_element_located((By.XPATH,'//*[@id="identifierNext"]/div/button/div[2]')))
     element.click()
     
     element = wait.until(EC.presence_of_element_located((By.XPATH, '//*[@id="password"]/div[1]/div/div[1]/input')))
-    element.send_keys('Firefist@ace2002')
+    element.send_keys('<Add Your Password>')
     driver.find_element_by_xpath('//*[@id="passwordNext"]/div/button/div[2]').click()
     time.sleep(5)
     driver.get(link)
