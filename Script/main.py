@@ -11,7 +11,7 @@ import time
 import requests
 from datetime import datetime
 
-TOKEN = "1532806948:AAHrR1O49Ow4J06-nVBqNo9I8XtFHmHLXGI"
+TOKEN = "1532806948:AAHrR1O49Ow4J06-nVBqNo9I8XtFHmHLXGI" # Add Your Token
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 
@@ -98,7 +98,7 @@ def exitprogram(driver):
 
 def main(text, chat):
     while True:
-        text, chat = get_last_chat_id_and_text(get_updates())
+        text, chat = get_last_chat_id_and_text(get_updates()) # Add meet links
         if(text == "/1"):
             start("https://meet.google.com/lookup/ef4rgsip3e", chat)
         if(text =="/2"):
