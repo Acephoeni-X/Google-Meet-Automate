@@ -11,7 +11,7 @@ import time
 import requests
 from datetime import datetime
 
-TOKEN = "1532806948:AAHrR1O49Ow4J06-nVBqNo9I8XtFHmHLXGI" # Add Your Token
+TOKEN = "1532806948:AAHrR1O49Ow4J06-nVBqNo9I8XtFHmHLXGI" # Add Your Token need to use env to prevent sensitive informations
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 
 
