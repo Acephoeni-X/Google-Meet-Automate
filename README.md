@@ -1,4 +1,4 @@
-# Python-bat
+# Google Meet Automate
 
 Google-Meet automation using Selenium automation.
 
