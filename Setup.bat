@@ -1,4 +1,4 @@
-@echo off
+@echo off #This will turn off output screen
 echo "Script will wait 3 second to check additional functionalities"
 timeout 3 >nul
 cd Script
